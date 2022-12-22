@@ -1,0 +1,44 @@
+<template>
+    <lightning-card title="Account Detail " icon-name="custom:custom46">
+        <div class="slds-m-around_medium">
+            <lightning-layout>
+                <lightning-layout-item>
+                    <label>Name:</label>
+                    <lightning-formatted-text value={account.name}></lightning-formatted-text>
+                    
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout>
+                <lightning-layout-item>
+                    <label>Account Number:</label>
+                    <lightning-formatted-text value={account.accountNumber}></lightning-formatted-text>
+                </lightning-layout-item>
+            </lightning-layout>
+               
+            <lightning-layout>
+                <lightning-layout-item>
+                    <label>Phone:</label>
+                    <lightning-formatted-phone value={account.phone}></lightning-formatted-phone>
+                </lightning-layout-item>
+            </lightning-layout>
+
+            <!-- <lightning-layout>
+                <lightning-layout-item>
+                    <label>Email:</label>
+                    <lightning-formatted-text value={account.email}></lightning-formatted-text>
+                </lightning-layout-item>
+            </lightning-layout> -->
+               
+            <!-- <lightning-layout>
+                <lightning-layout-item>
+                    <label>Rating:</label>
+                    <lightning-formatted-text value={account.rating}></lightning-formatted-text>
+                </lightning-layout-item>
+            </lightning-layout> -->
+              
+           
+
+        </div>
+
+    </lightning-card>
+</template>

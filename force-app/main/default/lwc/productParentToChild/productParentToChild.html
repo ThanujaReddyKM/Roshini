@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Product Details">
+        <lightning-checkbox-group name="Checkbox Group"
+                              label="Checkbox Group"
+                              options={options}
+                              value={value}
+                              onchange={handleChange}
+                              ></lightning-checkbox-group>
+    <!-- <p>Selected Values are: {selectedValues}</p> -->
+
+    <p class="slds-text-align_center">Count:{countValue}</p>
+    <!-- <p>{states}</p> -->
+
+    
+
+    </lightning-card>
+   
+    <c-product-parent-to-child-child onadd={handleadd}></c-product-parent-to-child-child>
+    
+</template>

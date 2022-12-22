@@ -1,0 +1,34 @@
+<template>
+    <lightning-card title="Opportunity List Apex">
+        <div class="slds-m-around-large">
+            <lightning-button label="Get Opportunity"
+            variant="brand" onclick={handleGetOpportunity}>
+
+            </lightning-button>
+        </div>
+        <hr/>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Amount</th>
+                    <th>Close Date</th>
+                    <th>Stage Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <template for:each={oportunitiesData} for:item="opportunity">
+                    <tr key={opportunity}>
+                        <th>{opportunity.Name}</th>
+                        <th>{opportunity.Amount}</th>
+                        <th>{opportunity.CloseDate}</th>
+                       
+                        <th>{opportunity.StageName}</th>
+                    </tr>}
+                </template>
+            </tbody>
+        </table>
+
+    </lightning-card>
+    
+</template>

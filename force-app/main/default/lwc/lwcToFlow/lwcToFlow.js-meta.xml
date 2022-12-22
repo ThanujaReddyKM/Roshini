@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>LWC To Flows</masterLabel>
+    <description>LWC To Flows</description>
+    <targets>
+        <target>lightning__FlowScreen</target>
+    </targets>
+
+    <targetConfigs>
+
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="firstname" type="String" label="firstname" />
+            <property name="lastname" type="String" label="lastname" />
+            <property name="email" type="String" label="email" />
+            
+        </targetConfig>
+    </targetConfigs>
+
+    <!-- <targetConfigs>
+
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="FirstName" type="String" label="FirstName" />
+            <property name="LastName" type="String" label="LastName" />
+            <property name="Email" type="String" label="Email" />
+            
+        </targetConfig>
+    </targetConfigs> -->
+</LightningComponentBundle>

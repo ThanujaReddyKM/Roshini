@@ -1,0 +1,110 @@
+<template>
+    <lightning-card title="Payment Details">
+        <lightning-input type="tel"  label="Enter Card Number" placeholder="xxxx-xxxx-xxxx-xxxx"
+        style="margin-right: 400px;
+        margin-left:450px"      
+        pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}"
+        maxlength="19"
+        minlength="19"
+        field-level-help="Enter the correct pattern"></lightning-input>
+     
+        
+        <lightning-combobox label="Exp MM"
+        options={monthOptions}
+        
+        onchange={handleMonth}
+        style="margin-right: 750px;
+        margin-left:500px;
+        margin-top:60px"
+        ></lightning-combobox>
+        <lightning-combobox label="Exp YY"
+        options={yearOptions}
+        onchange={handleYear}
+        style="margin-left: 700px; margin-right:600px;margin-top:-56px"
+        ></lightning-combobox>
+        <lightning-input label="CVV" type="number"  style="margin-left: 800px;margin-right:450px;margin-top:-56px;margin-bottom:60px" 
+        maxlength="3"
+        minlength="3"></lightning-input>
+
+        <lightning-button title="Pay now" label="Pay" variant="brand"
+        style="margin-left: 700px;margin-top:500px "></lightning-button>
+
+        <lightning-input
+        label="Event Name"
+        placeholder="Grand Opening"
+        field-level-help="The event name must 50 characters or less"
+        maxlength="50"
+    >
+    </lightning-input>
+
+    <lightning-input
+    type="checkbox"
+    label="Red"
+    onchange={handleCheckboxChange}
+>
+</lightning-input>
+<lightning-input
+    type="checkbox"
+    label="Blue"
+    onchange={handleCheckboxChange}
+>
+</lightning-input>
+<lightning-input
+    type="checkbox"
+    label="Green"
+    onchange={handleCheckboxChange}
+>
+</lightning-input>
+
+<p>Checked items: {selection}</p>
+
+<lightning-input
+type="checkbox"
+data-element="subscribe-checkbox"
+label="Subscribe"
+>
+</lightning-input>
+<lightning-button
+label="Subscribe"
+onclick={handleSubscribe}
+></lightning-button>
+
+<lightning-input
+        type="text"
+        label="Enter some text"
+        value={textvalue}
+        onchange={handleChange}
+    ></lightning-input>
+    <lightning-button
+        label="Focus selection"
+        onclick={handleClick}
+    ></lightning-button>
+
+    <fieldset class="slds-form-element slds-form-element_compound">
+        <legend class="slds-form-element__legend slds-form-element__label">
+            Name
+        </legend>
+        <div class="slds-form-element__control">
+            <div class="slds-form-element__row">
+                <div class="slds-size_1-of-2">
+                    <lightning-input label="First Name"></lightning-input>
+                </div>
+                <div class="slds-size_1-of-2">
+                    <lightning-input label="Last Name"></lightning-input>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+
+    <p id="otherlabel">
+        Your Event Name
+        <lightning-input
+            label="Event"
+            variant="label-hidden"
+            aria-labelledby="otherlabel"
+        >
+        </lightning-input>
+    </p>
+
+    </lightning-card> 
+</template>

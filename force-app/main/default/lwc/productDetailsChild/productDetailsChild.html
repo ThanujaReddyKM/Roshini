@@ -1,0 +1,27 @@
+<template >
+
+    <template if:true={data}>
+        <div style="background-color:rgb(14, 100, 100)">
+            <lightning-card title="Product Details" style="color: blue;">
+        <div style="margin-left: 200px;margin-right:200px; ">
+            <!-- background-color:rgb(239, 206, 236) -->
+                <img src={image} alt="" height="200px" width="300px" style="margin-left:200px ;margin-top:30px" >
+                <br/>
+                <p><b style="font-size: 20px;color:rgb(190, 60, 86);">Brand:</b><span style="color:rgb(18, 15, 145);font-size: 20px;font-family:'Times New Roman', Times, serif">{brand}</span></p>
+               
+                <p><b style="font-size: 20px;color:rgb(190, 60, 86);">CostPrice:</b><span style="color:rgb(18, 15, 145);font-size: 20px;font-family:'Times New Roman', Times, serif">{costprice}</span></p>
+                <p><b style="font-size: 20px;color:rgb(190, 60, 86);">Discount:</b><span style="color:rgb(18, 15, 145);font-size: 20px;font-family:'Times New Roman', Times, serif">{discountTemp}</span></p>
+                <p><b style="font-size: 20px;color:rgb(190, 60, 86);">SellingPrice:</b><span style="color:rgb(18, 15, 145);font-size: 20px;font-family:'Times New Roman', Times, serif">{sellingprice}</span></p>
+                <p><b style="font-size: 20px;color:rgb(190, 60, 86);">Description:</b><span style="color:rgb(18, 15, 145);font-size: 20px;font-family:'Times New Roman', Times, serif">{description}</span></p>
+                <br/>
+                <br/>
+                <lightning-button style="margin-left:400px ;" label="Add" onclick={onclickHandler} class="slds-button slds-button_success"></lightning-button>
+                
+                <p><b style="margin-left:250px ;font-size: 20px;color:rgb(190, 60, 86);">Total:</b><span style="color:rgb(12, 163, 40);font-size: 20px;font-family:'Times New Roman', Times, serif">{tottal}</span></p>
+            </div>
+            </lightning-card>
+            
+        </div>
+    </template>
+
+</template>

@@ -1,0 +1,3 @@
+<aura:component implements="flexipage:availableForAllPageTypes,lightning:actionOverride">
+<c:lwcToFlow aura-id="lwcToFlow"></c:lwcToFlow>
+</aura:component>

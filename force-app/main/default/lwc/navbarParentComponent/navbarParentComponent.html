@@ -1,0 +1,26 @@
+<template>
+    
+        <lightning-card title="Event with Data" icon-name="custom:custom14">
+            <div class="slds-m-around_medium">
+      
+        <div class="flex">
+          
+            <c-navbar-child-component nav-list={navList} onselection={selectedNavHandler}></c-navbar-child-component>
+    
+            <template if:true={selectedPlayer}>
+                <div class="card">
+                    <div>
+                        <img src={selectedPlayer.imgUrl}  />
+                    </div>
+                    <div class="container">
+                        <!-- <p><strong>Watch Name:</strong> {selectedPlayer.name}</p> -->
+                        <p><strong>Price:</strong> {selectedPlayer.price}</p>
+                        <p><strong>Description:</strong> {selectedPlayer.description}</p>
+                       
+                    </div>
+                </div>
+            </template>
+        </div>
+    </div>
+    </lightning-card>
+</template>

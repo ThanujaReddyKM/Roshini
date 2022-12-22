@@ -1,0 +1,10 @@
+<aura:component implements="flexipage:availableForAllPageTypes,lightning:actionOverride">
+        <!-- <c:progressLwc aura-id="ProgressLwc"></c:progressLwc> -->
+    <lightning:progressIndicator currentStep="3" type="path" variant="base">
+        <lightning:progressStep label="New" value="1"/>
+        <lightning:progressStep label="Planning" value="2"/>
+        <lightning:progressStep label="Construction" value="3"/>
+        <lightning:progressStep label="Deployment" value="4"/>
+        <lightning:progressStep label="Signoff" value="5"/>
+    </lightning:progressIndicator>
+</aura:component>

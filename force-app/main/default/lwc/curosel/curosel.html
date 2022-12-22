@@ -1,0 +1,215 @@
+<template>
+
+   <template if:false={cartAddDetails}>
+    <lightning-card >
+        <div >
+                <span onclick={HandleaddToCartProducts} data-id={recordCartId}  class="slds-p-horizontal_medium">
+              <div style="margin-bottom:-10px ;">
+                    <lightning-icon
+                icon-name="utility:cart"
+              
+                size="medium"
+                style="margin-left:950px;"
+                alternative-text="Indicates approval"
+                                      >
+                </lightning-icon>
+               <b>Cart({Total})</b> <b style="color:rgb(68, 43, 211) ;margin-left:-250px">Welcome :{currentUserName}</b>
+               <!-- <b style="color:rgb(238, 167, 238) ;margin-left:650px;">Welcome :{currentUserName}</b> -->
+            </div>
+                </span>
+               
+            </div>
+    </lightning-card>
+    </template>
+    <template if:true={cartAddDetails}>
+    <lightning-card title="Cart" icon-name="custom:custom63">
+        <div onclick={backCartHandle}>
+            <lightning-icon
+                            icon-name="utility:back"
+                            size="Small"
+                            alternative-text="Indicates approval"
+                                                                  >
+            </lightning-icon>
+        </div>
+        <div class="slds-m-around_medium">
+    
+    
+            <template if:true={carts.data}>
+           
+       
+    <lightning-datatable
+    key-field="Id"
+    data={carts.data}
+    columns={columns}
+    onsave={handleSave}
+    draft-values={draftValues}
+    onrowaction={handleRowAction}
+    >
+   
+</lightning-datatable>
+          
+        </template>
+            <template if:true={carts.error}>
+                handle Apex error 
+            </template>
+        </div>
+    </lightning-card> 
+ </template>
+
+
+ <div>
+    <template if:false={cartAddDetails}>
+<lightning-card>
+    <template if:false={Details}>
+   <!-- <div class="slds-size_12-of-1" >
+                <div style="height:200px;"> -->
+                        <lightning-carousel  >
+                            <template if:true={items}>
+                                <template for:each={items} for:item="products">                       
+                            <lightning-carousel-image
+                            key={products.id}
+                            src={products.src}                        
+                            >
+                            </lightning-carousel-image> 
+
+                        </template>
+                    </template>
+                    </lightning-carousel> 
+              
+                <!-- </div>
+    </div> -->
+</template>
+</lightning-card>
+</template>
+</div>
+
+
+
+<lightning-card>
+    <template if:false={cartAddDetails}>
+    <template if:false={Details}>
+        <!-- <template if:false={abcd}> -->
+    <div class="slds-grid slds-gutters">
+        <div class="slds-col">
+        <span>
+       
+            <div class="slds-grid slds-wrap">
+                <template if:true={products}>
+                    
+                    <template for:each={products} for:item="product">
+                       
+                            <div  key={product.Id} class="slds-col slds-size_3-of-12">
+
+                                <span>
+                                    <div class="slds-p-around_medium">
+                                        <div class="slds-box">
+                                    <!-- <div class="slds-box slds-theme_shade"> -->
+                                        <!-- <div class="slds-box slds-theme_shade slds-theme_alert-texture"> -->
+                                            <div class="slds-box slds-theme_inverse ">
+                                            
+                                                <div class="slds-size_1-of-2">
+
+                                             <lightning-formatted-rich-text value={product.Image__c}></lightning-formatted-rich-text>
+                                            </div>
+                                            <div>
+                                                <b>Name</b> {product.ProductName__c} <br>
+                                               
+                                              <b>Price</b> {product.Price__c} <br>
+                                           
+                                              <br>
+                                             
+                                            </div>
+                                            <!-- <template for:each={cart} for:item="cart">
+                                            <div key={cart.Id}>
+                                                <span>
+                                                <div>
+                                                <b>Available Quantity</b> {cart.Available_Products__c} <br>
+                                                <br>
+                                            </div>
+                                        </span>
+                                              </div>
+                                            </template> -->
+                                             <lightning-button label="View" data-id={product.Id} variant="brand" onclick={Viewpage}></lightning-button> &nbsp; &nbsp; &nbsp; &nbsp;
+                                              <!-- <lightning-button icon-name="utility:cart" data-id={product.Id} variant="brand" onclick={AddToCart}></lightning-button> 
+                                           -->
+                                        </div>
+                                        </div>
+                                        </div>
+                                </span> 
+                            
+                            </div>
+      
+                    </template>
+                    
+                </template>
+            </div>
+ 
+        </span>
+        </div> 
+       </div>
+    </template>
+<!-- </template> -->
+</template>
+</lightning-card>
+
+
+<!------------------------------------------------------------------------------------------------------------>
+
+<template if:true={Details}>
+    <!-- <template if:false={abcd}> -->
+    <lightning-card icon-name="Standard:avatar" title={productnamefield}>
+        
+        <div class="slds-col">
+            <div onclick={backHandle}>
+                <lightning-icon
+                                icon-name="utility:back"
+                                size="Small"
+                                alternative-text="Indicates approval"
+                                                                      >
+                </lightning-icon>
+            </div>
+            <lightning-record-view-form 
+                                   
+                                   record-id={recordId}
+                                   object-api-name={objectApi}
+                                   density ="Compact">
+                                   <div class="slds-box slds-theme_shade slds-theme_alert-texture">
+                                   <div class="slds-grid slds-gutters">
+                                   
+                                    <div class="slds-col">
+                                        <lightning-output-field field-name={imagefield}></lightning-output-field>
+                                    </div>
+                                    <div class="slds-col">
+                                       
+                                       <lightning-output-field field-name={pricefield} style="font-size:10px ;"></lightning-output-field> 
+                                        <lightning-output-field field-name={descriptionfield}></lightning-output-field>
+                                        <lightning-output-field field-name={yourdiscount}></lightning-output-field>
+                                      
+                                        <lightning-output-field field-name={yoursprice}></lightning-output-field> 
+                                        <lightning-output-field field-name={remainingProducts}></lightning-output-field>
+                                    </div>
+                                </div>
+                                   </div>
+                
+                <lightning-input type="number" label="Count" class="forInput"
+                onchange={handleChangeNum1}></lightning-input>
+
+                <span onclick={HandleAddToCart} data-id={recordId} class="slds-p-horizontal_medium">
+                    <lightning-icon
+                                    icon-name="utility:cart"
+                                    aria-label="cart"
+                                    label="cart"
+                                    size="large"
+                                    style="color:pink ;"
+                                    alternative-text="Indicates approval"
+                                                          >
+                    </lightning-icon>
+                </span>
+
+            </lightning-record-view-form>  
+            </div>
+
+    </lightning-card>
+    <!-- </template> -->
+</template> 
+</template>

@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title="Publisher Component" icon-name="custom:custom16">
+        <div class="slds-m-around_large">
+            <lightning-button label="Publisher"
+            onclick={handlePublisher}></lightning-button>
+            <br/>
+            <div>
+                <lightning-input type="text" label="Enter UserName"
+                class="forInput"></lightning-input>
+                <lightning-input type="email" label="Enter Email"
+                class="forInput"></lightning-input>
+                <br/>
+                <lightning-button label="Send Detail" onclick={handleSendDetail}></lightning-button>
+            </div>
+            <hr/>
+            <div>
+                <lightning-button label="Subscribe" onclick={handleSubscribe}></lightning-button><br/>
+                <b>Data Receive From Component:</b>{message}
+            </div>
+        </div>
+    </lightning-card>
+</template>

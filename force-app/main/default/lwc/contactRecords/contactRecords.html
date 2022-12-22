@@ -1,0 +1,45 @@
+<template>
+<lightning-card title="Contact3 Records">
+    <lightning-input type="text" 
+             placeholder="Search Text Here"
+             style=" margin-right:650px;"
+             value={searchKey} 
+            onchange={handelSearchKey}
+                 >
+    </lightning-input>
+
+    <lightning-button label="Search" 
+                    onclick={SearchContacts}
+                    style="margin-left:190px;margin-top:-100px;">
+
+    </lightning-button>
+
+    <lightning-combobox label=""
+                        value={value}
+                        options={options}
+                        onchange={handlechange}
+                        style="margin-left:750px;margin-top:-50px">
+
+    </lightning-combobox>
+
+    <lightning-datatable 
+    style="margin-top: -100px;"
+    key-field="id"
+    data={data1}
+    columns={columns1}
+>
+    </lightning-datatable>
+
+    <!-- <lightning-button label="First"  
+    style="margin-left:560px">
+    </lightning-button>
+    <lightning-button label="Previous"  >
+    </lightning-button>
+    <lightning-button label="Next"  >
+    </lightning-button>
+    <lightning-button label="Last"  >
+    </lightning-button> -->
+
+</lightning-card>
+    
+</template>

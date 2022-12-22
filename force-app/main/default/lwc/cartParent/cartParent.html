@@ -1,0 +1,95 @@
+<template>
+    <lightning-card title={cartTitle}>
+        <br/>
+        <template if:true={productList}>
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+            <thead>
+                <tr class="slds-line-height_reset">
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Name">Product Name</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Quantity">Quantity</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Price">Price</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Total">Total</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <template for:each={productList} for:item="product">
+                    <tr key={product.Id}>
+                        <th scope="col">
+                            <!-- <div>{product.productRecord.ProductName__c}</div> -->
+                        </th>
+                        <th scope="col">
+                            <div> <lightning-formatted-number value={product.quantity}></lightning-formatted-number></div>
+                        </th>
+                        <th scope="col">
+                            <div>
+                                <lightning-formatted-number value={product.productRecord.Yours_Price__c} format-style="currency"
+                                currency-code="USD">
+                            </lightning-formatted-number></div>
+                        </th>
+                        <th scope="col">
+                            <div>
+                                <lightning-formatted-number value={product.total} format-style="currency"
+                                currency-code="USD">
+                            </lightning-formatted-number></div>
+                        </th>
+                        
+                    </tr>
+                </template>
+                <tr></tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                  <td scope="col" colspan="3" style="text-align:right;"><b>Grand Total</b></td>
+                  <td scope="col">
+                    <div>
+                        <lightning-formatted-number value={productWrap.total} format-style="currency"
+                        currency-code="USD">
+                    </lightning-formatted-number></div> 
+                  </td>
+                </tr>
+              </tfoot>
+        </table>
+        <br/>
+        <div style="text-align:center;">
+        <!-- <lightning-button variant="brand"
+        label="Make an Order"
+        title="Create Order"
+        onclick={openModal}
+        class="slds-m-left_x-small">
+        </lightning-button> -->
+        </div>
+        </template>
+    </lightning-card>
+
+
+</template>
+
+
+
+
+<!-- <template>
+    <lightning-card title="Catalog" icon-name="standard:catalog">
+        <lightning-layout multiple-rows horizontal-align="center">
+
+
+            <template for:each={products} for:item="product">
+                <lightning-layout-item key={product.productRecord.Id} size="12" small-device-size="6" medium-device-size="4"
+                    large-device-size="3">
+                    <c-cart-child product={product.productRecord} default-quantity={product.quantity} added-to-cart={product.isAddedToCart} onaddedtocart={handleAddToCart} onremovedfromcart={handleRemovedFromCart}></c-cart-child >
+                </lightning-layout-item>
+            </template>
+
+
+
+            
+        </lightning-layout>
+    </lightning-card>
+</template> -->

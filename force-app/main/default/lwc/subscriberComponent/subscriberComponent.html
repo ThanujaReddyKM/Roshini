@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Subscriber Component" icon-name="custom:custom17">
+        <div class="slds-m-around_large">
+            <div><b>Data Receive From Publisher :</b>{message}</div>
+        </div>
+        <hr/>
+        <div>
+          <p style="text-align: center;">User Detail From Publisher</p>  
+          <div>
+            <b>UserName:</b>{userDetail.username}
+            <br/>
+            <b>Email:</b>{userDetail.email}
+          </div>
+        </div>
+        <hr/>
+        <div>
+            <lightning-button label="Send To Publisher" onclick={handleSendToPublisher}></lightning-button>
+        </div>
+    </lightning-card>
+</template>

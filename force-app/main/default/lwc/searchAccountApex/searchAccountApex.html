@@ -1,0 +1,51 @@
+<template>
+    <lightning-card title="Search Account" icon-name="custom:custom1">
+        <div class="slds-m-around_large">
+            <lightning-layout>
+                <lightning-layout-item>
+                    <lightning-input tpe="text" label="Enter Account Name" class="forInput">
+                    </lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item class="slds-m-left_large">
+                    <lightning-input tpe="number" label="Enter Phone" class="forInput">
+                    </lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item class="slds-m-left_large slds-m-top_large">
+                    <lightning-button label="Search" onclick={hadleSearch}>
+                    </lightning-button>
+                </lightning-layout-item>
+            </lightning-layout>
+            <br/>
+            <br/>
+
+            <template if:true={accountList}>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Acount Number</th>
+                            <th>Phone</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template for:each={accountList} for:item="account">
+                            <tr key={account}>
+                                <td>{account.Name}</td>
+                                <td>{account.AccountNumber}</td>
+                                <td>{account.Phone}</td>
+
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </template>
+
+            <template if:true={error}>
+                <b>Error</b>{error}
+            </template>
+        </div>
+
+    </lightning-card>
+    
+</template>

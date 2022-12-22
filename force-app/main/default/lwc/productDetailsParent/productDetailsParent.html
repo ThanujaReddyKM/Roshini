@@ -1,0 +1,27 @@
+<template>
+
+
+
+    <lightning-card title="Select Product" style="color: rgb(47, 155, 243); ">
+        <div style="margin-left: 350px;margin-right:400px;">
+            <!-- background-color:rgb(236, 198, 221) ; -->
+      <lightning-input type="checkbox" label="Watch" value={countvalue} onchange={onclickHandler} checked={watch} style="font-size: 20px;margin-left: 150px"> </lightning-input><p style="margin-left: 250px;margin-top:-22px">Count: ({countvalue}) </p><br/>
+  
+      <lightning-input type="checkbox" label="Phone" onchange={onclickHandler} checked={phone} style="font-size: 20px;margin-left: 150px" > </lightning-input><p style="margin-left: 250px;margin-top:-22px">Count: ({countphone}) </p> <br/>
+     <lightning-input type="checkbox" label="Bag" onchange={onclickHandler} checked={bag} style="font-size: 20px;margin-left: 150px"> </lightning-input><p style="margin-left: 250px;margin-top:-22px">Count: ({countbag}) </p><br/>
+       <lightning-input type="checkbox" label="MacBook" onchange={onclickHandler} checked={mac} style="font-size: 20px;margin-left: 150px"> </lightning-input><p style="margin-left: 250px;margin-top:-22px">Count: ({countmac})</p> <br/>
+       <lightning-input type="checkbox" label="Bottle" onchange={onclickHandler} checked={bottle} style="font-size: 20px;margin-left: 150px"> </lightning-input><p style="margin-left: 250px;margin-top:-22px">Count: ({countbottle})</p> <br/>
+    </div>
+    </lightning-card>
+
+  
+
+ 
+
+    <!-- <template if:true={areDetailsVisible}> -->
+        <c-product-details-child onselected={handleadd} onselectedbag={handleBag} onselectedphone={handlePhone}
+        onselectedmacbook={handleMacBook} onselectedbottle={handleBottle}></c-product-details-child>
+
+    <!-- </template> -->
+
+</template>

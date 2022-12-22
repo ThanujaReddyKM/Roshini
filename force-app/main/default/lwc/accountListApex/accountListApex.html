@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="Account List Apex" icon-name="custom:custom7">
+        <div class="slds-m-around_large">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Account Number</th>
+                        <th>Phone</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={accountList.data} for:item="account">
+                        <tr key={account}>
+                            <td>{account.Name}</td>
+                            <td>{account.AccountNumber}</td>
+                            <td>{account.Phone}</td>                           
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </div>
+    </lightning-card>  
+</template>
